@@ -15,7 +15,12 @@
 [Setup instructions]
 
 ## Data
-Full calculation data stored at: [specify location]
+Raw calculation data is stored on Zenodo:
+- Input structures: [DOI]
+- Calculation outputs: [DOI]
+- Checkpoint files: [DOI]
+
+### Data Organization on Zenodo
 
 ## Dependencies
 [List key software dependencies]
