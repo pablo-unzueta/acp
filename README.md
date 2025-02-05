@@ -30,7 +30,7 @@ data/
 ```
 
 ### Uploading New Data
-1. Install tools: `pip install zenodo-cli`
+1. Install requirements: `pip install requests tqdm`
 2. Prepare data:
     ```bash
     # Compress large directories
@@ -40,16 +40,16 @@ data/
 3. Upload:
     ```bash
     export ZENODO_TOKEN="your-token"
-    zenodo-cli create --title "Project Data" --type dataset
-    zenodo-cli upload calculations.tar.gz checkpoints.tar.gz
-    zenodo-cli publish
+    ./scripts/utils/zenodo_upload.py \
+        --title "Project Data" \
+        --description "$(cat README.txt)" \
+        --creators "LastName, FirstName" \
+        calculations.tar.gz checkpoints.tar.gz
     ```
 
 ### Downloading Data
-```bash
-pip install zenodo-cli
-zenodo-cli download [DOI]
-```
+# Use Zenodo's direct download links or API
+wget https://zenodo.org/record/[record]/files/[filename]
 
 ## Dependencies
 [List key software dependencies]

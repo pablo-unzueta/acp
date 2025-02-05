@@ -21,3 +21,5 @@ venv/
 
 # Jupyter
 .ipynb_checkpoints
+
+hello.py
