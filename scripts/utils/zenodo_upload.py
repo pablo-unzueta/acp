@@ -1,10 +1,10 @@
-#!/usr/bin/env python3
-"""
-Upload data to Zenodo using their REST API.
-Requires: requests
-Install: pip install requests
-"""
-
+# /// script
+# requires-python = ">=3.11"
+# dependencies = [
+#     "requests",
+#     "tqdm",
+# ]
+# ///
 import os
 import sys
 import json
