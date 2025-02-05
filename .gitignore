@@ -1,0 +1,23 @@
+# Calculation files
+*.chk
+*.rwf
+*.cube
+scratch/
+temp/
+
+# System files
+*~
+.DS_Store
+
+# Large data
+large_data/
+credentials.txt
+
+# Python
+__pycache__/
+*.py[cod]
+.env
+venv/
+
+# Jupyter
+.ipynb_checkpoints
