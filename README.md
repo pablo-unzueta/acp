@@ -31,19 +31,38 @@ data/
 
 ### Uploading New Data
 1. Install requirements: `pip install requests tqdm`
-2. Prepare data:
+2. Set up tokens:
+    ```bash
+    # For testing (sandbox)
+    export ZENODO_SANDBOX_TOKEN="your-sandbox-token"
+    
+    # For production
+    export ZENODO_TOKEN="your-production-token"
+    ```
+3. Prepare data:
     ```bash
     # Compress large directories
     tar -czf calculations.tar.gz calculations/
     tar -czf checkpoints.tar.gz checkpoints/
     ```
-3. Upload:
+4. Test upload first:
     ```bash
-    export ZENODO_TOKEN="your-token"
+    ./scripts/utils/zenodo_upload.py \
+        --sandbox \
+        --title "Project Data" \
+        --description "$(cat README.txt)" \
+        --creators "LastName, FirstName" \
+        calculations.tar.gz checkpoints.tar.gz
+    ```
+5. When ready, upload to production:
+    ```bash
     ./scripts/utils/zenodo_upload.py \
         --title "Project Data" \
         --description "$(cat README.txt)" \
         --creators "LastName, FirstName" \
+        --keywords "computational chemistry,DFT,your-keywords" \
+        --communities "computational-chemistry" \
+        --related-dois "10.xxxx/xxxxx" \
         calculations.tar.gz checkpoints.tar.gz
     ```
 
